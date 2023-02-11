@@ -1,0 +1,16 @@
+<form [formGroup]="formGroup" class="d-flex align-items-center">
+  <mat-form-field appearance="fill" class="w-100 me-2">
+    <mat-label>Enter a new todo</mat-label>
+    <input formControlName="todo" class="w-100" matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint
+      *ngIf="formGroup.get('todo')?.invalid && (formGroup.get('todo')?.dirty || formGroup.get('todo')?.touched) && formGroup.get('todo')?.errors?.['required']"
+      class="text-danger">
+      Todo can't be empty!
+    </mat-hint>
+  </mat-form-field>
+  <button
+    [disabled]="formGroup.invalid"
+    (click)="handleSubmit()"
+    mat-raised-button color="primary">Submit</button>
+</form>
