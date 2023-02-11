@@ -1,0 +1,16 @@
+on: push
+name: Build Angular
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-versions: [16.x]
+
+    steps:
+      - name: Install dependencies
+        run: npm install
+      - name: Test components
+        run: npm run test
+      - name: Build to dist
+        run: npm run build
