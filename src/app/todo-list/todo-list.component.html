@@ -1,11 +1,11 @@
 <mat-list>
   <mat-list-item
     *ngFor="let todo of todos$ | async">
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center justify-content-between" >
       <span 
-        [class.text-decoration-line-through style="color:blue"]="todo.done"
+        [class.text-decoration-line-through]="todo.done"
         matListItemTitle>
-        {{todo.task}}
+        <h3 matListItemTitle style="color:blue">{{todo.task}}</h3>
       </span>
       <div>
         <button
