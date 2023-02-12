@@ -2,8 +2,8 @@
   <mat-list-item
     *ngFor="let todo of todos$ | async">
     <div class="d-flex align-items-center justify-content-between">
-      <span
-        [class.text-decoration-line-through]="todo.done"
+      <span 
+        [class.text-decoration-line-through style="color:blue"]="todo.done"
         matListItemTitle>
         {{todo.task}}
       </span>
