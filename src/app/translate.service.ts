@@ -42,7 +42,7 @@ export class TranslateService {
 
   
   translate(content: string, target: Language): Observable<string> {
-    return this.httpClient.post<GoogleTranslationResult>(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyA9PbwV3vJsHydx7olAXxrqAH2aaz7LggE`, {
+    return this.httpClient.post<GoogleTranslationResult>(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyDeg51eFBOo7fZDDMOv8xy0VEMXXZepa5g`, {
       q: content,
       target: target,
       format: "text"
