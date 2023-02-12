@@ -21,7 +21,7 @@ export class TranslateService {
   languages: ILanguage[] = [
     {
       code: Language.CN,
-      name: '中文简体'
+      name: 'Chinese'
     },
     {
       code: Language.EN,

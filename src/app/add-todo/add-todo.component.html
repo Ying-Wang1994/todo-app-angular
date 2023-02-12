@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" class="d-flex align-items-center">
   <mat-form-field appearance="fill" class="w-100 me-2">
     <mat-label>Enter a new todo</mat-label>
-    <input formControlName="todo" class="w-100" matInput placeholder="Placeholder">
+    <input formControlName="todo" class="w-100" matInput placeholder="How are you today?">
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint
       *ngIf="formGroup.get('todo')?.invalid && (formGroup.get('todo')?.dirty || formGroup.get('todo')?.touched) && formGroup.get('todo')?.errors?.['required']"
