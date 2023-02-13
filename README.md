@@ -1,3 +1,15 @@
+# Live app in Google Could
+URL: https://angular-app-377603.ts.r.appspot.com/
+
+# Github repository
+ URL: https://github.com/Ying-Wang1994/todo-app-angular
+
+# App workflow
+Enter text to input and submit, it will get a To-Do list.
+Translate button can translate item to detected langauge.
+Detected langauge has four options.
+Done button can mark done todo item.
+
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
