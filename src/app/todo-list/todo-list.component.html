@@ -1,13 +1,15 @@
 <mat-list>
-  <mat-list-item
-    *ngFor="let todo of todos$ | async">
-    <div class="d-flex align-items-center justify-content-between" >
+  <!-- Loop over the "todos$" observable and display each todo item as a mat-list-item -->
+  <mat-list-item *ngFor="let todo of todos$ | async">
+    <div class="d-flex align-items-center justify-content-between">
+      <!-- Display the todo task and strike it through if the todo is done -->
       <span 
         [class.text-decoration-line-through]="todo.done"
         matListItemTitle>
         {{todo.task}}
       </span>
       <div>
+        <!-- Display a button that triggers a drop-down menu for translation options -->
         <button
           [matMenuTriggerFor]="menu"
           mat-raised-button
@@ -16,6 +18,7 @@
           Translate
         </button>
         <mat-menu #menu="matMenu">
+          <!-- Loop over the available languages and display a button for each that, when clicked, calls the "handleClickTranslate" function -->
           <button
             (click)="handleClickTranslate(todo, language.code)"
             *ngFor="let language of translationService.languages"
@@ -23,6 +26,7 @@
             {{language.name}}
           </button>
         </mat-menu>
+        <!-- Display a button that, when clicked, calls the "handleClickDone" function -->
         <button
           (click)="handleClickDone(todo.todoId)"
           mat-raised-button
