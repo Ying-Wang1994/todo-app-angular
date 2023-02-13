@@ -40,12 +40,15 @@ export class TranslateService {
     private httpClient: HttpClient
   ) { }
 
-  
+   // The translate function returns an Observable of a translated string
   translate(content: string, target: Language): Observable<string> {
+    // Make a post request to the Google translate API to translate the content
     return this.httpClient.post<GoogleTranslationResult>(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyDeg51eFBOo7fZDDMOv8xy0VEMXXZepa5g`, {
       q: content,
       target: target,
       format: "text"
-    }).pipe(map(result => result.data.translations[0].translatedText))
+    })
+    // Use the map operator to extract the translated text from the API response
+    .pipe(map(result => result.data.translations[0].translatedText))
   }
  }

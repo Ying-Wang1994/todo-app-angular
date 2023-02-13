@@ -19,7 +19,7 @@ export class AddTodoComponent {
   });
 
 
-  
+  // Dispatch an action to add a new to-do task to the store
   handleSubmit() {
     const todo = this.formGroup.get('todo')?.value;
     if (todo) {

@@ -1,14 +1,24 @@
 <form [formGroup]="formGroup" class="d-flex align-items-center">
+  
   <mat-form-field appearance="fill" class="w-100 me-2">
+    <!-- Add a label for the form field -->
     <mat-label>Enter a new todo</mat-label>
+
+    <!-- Add an input element for the form field, bind to the "todo" control in the form group -->
     <input formControlName="todo" class="w-100" matInput placeholder="How are you today?">
+
+    <!-- Add a suffix icon for the form field -->
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <!-- Add an error hint that will be displayed if the "todo" control is invalid and has been touched or dirty -->
     <mat-hint
       *ngIf="formGroup.get('todo')?.invalid && (formGroup.get('todo')?.dirty || formGroup.get('todo')?.touched) && formGroup.get('todo')?.errors?.['required']"
       class="text-danger">
       Todo can't be empty!
     </mat-hint>
   </mat-form-field>
+  
+  <!-- Add a submit button, bind to the form group's validity, and call handleSubmit() when clicked -->
   <button
     [disabled]="formGroup.invalid"
     (click)="handleSubmit()"
